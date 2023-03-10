@@ -1,0 +1,19 @@
+# To add a new item to a DynamoDB table using the AWS CLI, you can use the put-item command. 
+# Here's an example command that adds a new item with the specified attribute values to the instance_schedule table:
+
+# Here is the command 
+
+aws dynamodb put-item \
+--table-name instance_schedule \
+--item '{
+    "InstanceId": {"S": "i-02ea29289eef68e55"},
+    "LaunchTime": {"S": "2023-03-10T11:51:00"},
+    "Schedule": {"S": "6-21"},
+    "State": {"S": "stopped"}
+}' \
+--region us-east-2
+ 
+ 
+# This command uses the put-item command to add a new item with the specified attribute values to the instance_schedule table. 
+# The --item parameter is used to specify the attribute values in JSON format. In this example, the attribute values are specified as strings using the S data type.
+# You can modify the attribute values and data types based on your requirements. Once you execute this command, the new item will be added to the instance_schedule table.
