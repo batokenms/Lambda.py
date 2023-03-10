@@ -1,0 +1,15 @@
+aws dynamodb create-table \
+--table-name instance_schedule \
+--attribute-definitions AttributeName=State,AttributeType=S AttributeName=Schedule,AttributeType=S \
+--key-schema AttributeName=State,KeyType=HASH AttributeName=Schedule,KeyType=RANGE \
+--provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
+--tags Key=Environment,Value=Prod \
+--region <region-name>
+
+
+# Notes 
+
+# This command creates a table named instance_schedule with two attributes in AttributeDefinitions: State and Schedule. 
+# It defines a two-attribute KeySchema with State as the partition key and Schedule as the sort key. 
+# You can modify the attribute definitions, key schema, and provisioned throughput based on your requirements. 
+# Once the table is created, you can then create the global secondary index using the previously mentioned AWS CLI command
