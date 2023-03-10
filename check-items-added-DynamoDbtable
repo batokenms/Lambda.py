@@ -1,0 +1,17 @@
+
+# To check the items in a DynamoDB table using the AWS CLI, you can use the scan command. 
+# Here's an example command that scans the instance_schedule table and returns all the items in the table:
+
+# here is the command 
+
+aws dynamodb scan \
+--table-name instance_schedule \
+--region us-east-2
+
+
+# This command uses the scan command to scan the instance_schedule table and return all the items in the table. 
+# The --table-name parameter is used to specify the name of the table to scan. 
+# The --region parameter is used to specify the AWS region where the table is located.
+# When you execute this command, it will return a JSON object containing all the items in the instance_schedule table. 
+# You can use the --filter-expression parameter to filter the results based on specific attribute values. 
+# You can also use the --projection-expression parameter to specify which attributes to include in the results.
